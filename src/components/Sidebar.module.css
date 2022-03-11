@@ -1,0 +1,194 @@
+.sidebar{
+    position: absolute;
+    top: 64px;
+    left: 0;
+    height: 100%;
+    width: 78px;
+    background-color: #20bf55;
+    background-image: linear-gradient(315deg, #0396f8 0%, #01baef 74%);
+    padding: 6px 14px;
+    transition: all 0.5s ease;
+}
+
+.activeSideBar{
+    width: 240px;
+}
+
+.sidebar .logoContent .logo{
+color: #fff;
+display: flex;
+height: 50px;
+width: 100%;
+align-items: center;
+}
+
+.sidebar .toggleBtn {
+    position: absolute;
+    color: #fff;
+    left: 99%;
+    top: 6px;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+    background: #2196f3;
+    z-index: 1;
+}
+
+.sidebar .navList{
+    margin-top: 20px;
+    padding: 0px;
+}
+
+.sidebar .navList li{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+}
+
+.sidebar .linkName{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.activeSideBar .linkName{
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.5s ease;
+}
+
+.sidebar .navList li .link{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.sidebar .navList li .linkIcon{
+    color: #fff;
+}
+
+.sidebar ul li .link:hover{
+    color: #000;
+    background-color: #fff;
+}
+
+.sidebar ul li .link:hover .linkIcon{
+    color: #000;
+}
+
+.sidebar ul li .linkIcon{
+height: 50px;
+min-width: 50px;
+border-radius: 12px;
+line-height: 50px;
+text-align: center;
+}
+
+.sidebar ul li input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    background-color: #fff;
+    padding-left: 50px;
+    font-size: 18px;
+    color: #000;
+}
+
+.sidebar ul li .tooltip{
+    position: absolute;
+    left: 122px;
+    top: 0%;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+    height: 35px;
+    width: 122px;
+    background-color: #fff;
+    line-height: 35px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+
+}
+
+.sidebar.activeSideBar .tooltip{
+    display: none
+}
+
+.sidebar ul li:hover .tooltip{
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
+    top: 50%;
+}
+
+.homeContent{
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 78px);
+    left: 78px;
+    transition: all 0.5s ease;
+}
+
+.sidebar.activeSideBar ~ .homeContent{
+    width: calc(100% - 240px);
+    left: 240px;
+}
+
+@media(max-width: 768px) {
+
+    .sidebar{
+        width: 0px;
+        left: -50px;
+        top: 73px;
+        
+    }
+
+    .sidebar.activeSideBar{
+        width: 248px;
+        left: 0;
+        z-index: 1;
+    }
+
+
+   .sidebar.activeSideBar ~ .homeContent{
+        width: 100%;
+        left: 0px;
+        z-index: -1;
+    }
+
+    .homeContent{
+        width: 100%;
+        left: 0px;
+        z-index: 1;
+    }
+
+    .sidebar .toggleBtn{
+        /* position: fixed; */
+        z-index: 2;
+        left: 74px;
+        top: 14px;
+        transition: all 0.4s ease;
+    }
+
+    .sidebar.activeSideBar .toggleBtn{
+        left: 247px;
+    }
+    
+    
+}
